@@ -1,28 +1,31 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('VoteCtrl', function($scope, activePhotos) {
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-  
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
+  $scope.sortType     = 'id'; // set the default sort type
+  $scope.sortReverse  = true;  // set the default sort order
+
+  activePhotos.async().then(function(d) {
+    $scope.photos = d;
+  });
+
+})
+
+.controller('GalleryCtrl', function($scope, inactivePhotos) {
+
+  $scope.sortType     = 'id'; // set the default sort type
+  $scope.sortReverse  = true;  // set the default sort order
+
+  inactivePhotos.async().then(function(d) {
+    $scope.photos = d;
+  });
+
+})
+
+.controller('SubmitCtrl', function($scope) {
+  $scope.settings = {
+    enableFriends: true
   }
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});
+.controller('AboutCtrl', function($scope) {});

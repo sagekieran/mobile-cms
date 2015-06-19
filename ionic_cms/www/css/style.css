@@ -1,1 +1,22 @@
 /* Empty. Add your own CSS if you like */
+.vote {
+  margin-bottom: 20px;
+}
+
+.votePhoto {
+  width: 100%;
+}
+
+.galContainer {
+
+}
+
+.gallery {
+  display: inline-block;
+  margin: 20px;
+  margin-left: 30px;
+}
+
+.galleryPhoto {
+  width: 90px;
+}

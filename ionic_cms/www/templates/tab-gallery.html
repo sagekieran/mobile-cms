@@ -1,0 +1,19 @@
+<ion-view view-title="Gallery">
+  <ion-content>
+    <ion-list>
+      <a href="" ng-click="sortType = 'id'">
+        Newest
+      <span ng-show="sortType == 'id'"></span>
+      </a>
+      <a href="" ng-click="sortType = 'points'">
+        Trending
+        <span ng-show="sortType == 'points'"></span>
+      </a>
+      <div class="galContainer">
+        <ion-item class="gallery" ng-repeat="photo in photos | orderBy:sortType:sortReverse" >
+          <img class="galleryPhoto" ng-src="{{photo.image}}">
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
