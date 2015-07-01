@@ -4,8 +4,8 @@
       <ion-item class="vote" ng-repeat="photo in photos | orderBy:sortType:sortReverse">
         <img class="votePhoto" ng-src="{{photo.image}}">
         </br>
-        <i class="icon ion-chevron-up icon-accessory"></i>
-        <i class="icon ion-chevron-down icon-accessory"></i>
+        <i ng-click='upvote(photo.id)' class="icon ion-chevron-up icon-accessory"></i>
+        <p>Votes: {{photo.score}}</p>
       </ion-item>
     </ion-list>
   </ion-content>

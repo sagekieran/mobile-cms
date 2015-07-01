@@ -5283,8 +5283,8 @@ a.item-content {
  */
 .list {
   position: relative;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding-top: 0;
+  padding-bottom: 0;
   padding-left: 0;
   margin-bottom: 20px; }
 
