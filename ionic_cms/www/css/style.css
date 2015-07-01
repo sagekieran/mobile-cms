@@ -1,6 +1,7 @@
 /* Empty. Add your own CSS if you like */
 .vote {
-  margin-bottom: 20px;
+  margin-top: 20px;
+  border-bottom: 1px #bbb solid;
 }
 
 .votePhoto {
@@ -25,3 +26,8 @@
   padding: none;
   width: 12.5em;
 }
+ #arrow {
+   padding: 20px;
+   /*margin-left: 10px;
+   margin-right: 10px;*/
+ }

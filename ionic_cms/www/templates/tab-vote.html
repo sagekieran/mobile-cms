@@ -1,12 +1,12 @@
 <ion-view view-title="Vote">
   <ion-content>
     <ion-list>
-      <ion-item class="vote" ng-repeat="photo in photos | orderBy:sortType:sortReverse">
-        <img class="votePhoto" ng-src="{{photo.image}}">
+      <div class="vote" ng-repeat="photo in photos | orderBy:sortType:sortReverse">
+        <img ng-click='load()' class="votePhoto" ng-src="{{photo.image}}">
         </br>
-        <i ng-click='upvote(photo.id)' class="icon ion-chevron-up icon-accessory"></i>
-        <p>Votes: {{photo.score}}</p>
-      </ion-item>
+        <i id='arrow' ng-click='upvote(photo.id)' class="icon ion-chevron-up icon-accessory"> </i> Votes: {{photo.score}}
+        <!-- <p>Votes: {{photo.score}}</p> -->
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>
