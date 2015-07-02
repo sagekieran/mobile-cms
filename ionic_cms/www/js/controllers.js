@@ -76,7 +76,7 @@ angular.module('starter.controllers', [])
 
   $scope.random = function() {
    $scope.load()
-   $scope.sortType = 'rank'
+  //  $scope.sortType = 'rank'
   }
 
   $scope.load = function() {
@@ -97,31 +97,6 @@ angular.module('starter.controllers', [])
 
 .controller('SubmitCtrl', ['$scope', '$http', function($scope, $http) {
 
-  submit = function() {
-        var form = new FormData();
-        var data = $scope.imgData;
-        form.append('name', data.first_name);
-        form.append('campaign_id', 1);
-        form.append('email', data.email);
-        form.append('image', $scope.myFile);
-        console.log($scope.myFile);
-
-
-				$http.post('http://127.0.0.1:8000/api/images/',
-                form, {
-                    headers: {'Content-Type': undefined},
-                    transformRequest: function(data){ return data;}
-              })
-
-			        .success(function(data) {
-			            console.log(data);
-
-			        })
-              .error(function(data){
-                console.log(data);
-              });
-			}
-
   var pictureSource;
   var destinationType;
 
@@ -135,22 +110,16 @@ angular.module('starter.controllers', [])
 
 
   function onPhotoDataSuccess(imageData) {
-    console.log(imageData)
-    var form = new FormData();
-    var data
-    form.append('name', 'sage');
-    form.append('campaign_id', 1);
-    form.append('email', 'sagekieran@gmail.com');
-    form.append('image', imageData);
-    // console.log($scope.myFile);
-    console.log(form)
 
+    var url = 'http://intern-cms-dev.elasticbeanstalk.com/api/images/';
+    var params = {
+      name: 'sage',
+      email: 'sagekieran@gmail.com',
+      image: 'data:image/jpeg;base64,' + imageData
+      };
+      console.log(params)
 
-    $http.post('http://127.0.0.1:8000/api/images/',
-            form, {
-                headers: {'Content-Type': undefined},
-                transformRequest: function(data){ return data;}
-          })
+    $http.post(url, params)
 
           .success(function(data) {
               console.log(data);
@@ -161,21 +130,14 @@ angular.module('starter.controllers', [])
             console.log(data);
             console.log('error')
           })
-    // alert('success');
-
   }
 
-
-  function onPhotoURISuccess(imageURI) {
-    // console.log(imageURI);
-    alert('success')
-  }
 
   $scope.capturePhoto = function() {
     // Take picture using device camera and retrieve image as base64-encoded string
     console.log('photo')
     navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-      destinationType: destinationType.FILE_URI });
+      destinationType: destinationType.DATA_URL });
   }
 
   function capturePhotoEdit() {
@@ -186,8 +148,8 @@ angular.module('starter.controllers', [])
 
   $scope.getPhoto = function(source) {
     // Retrieve image file location from specified source
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-      destinationType: destinationType.FILE_URI,
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+      destinationType: destinationType.DATA_URL,
       sourceType: pictureSource.PHOTOLIBRARY });
   }
 
