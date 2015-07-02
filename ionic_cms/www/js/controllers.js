@@ -96,6 +96,7 @@ angular.module('starter.controllers', [])
 }])
 
 .controller('SubmitCtrl', ['$scope', '$http', function($scope, $http) {
+  correctOrientation: true
 
   var pictureSource;
   var destinationType;
@@ -136,8 +137,12 @@ angular.module('starter.controllers', [])
   $scope.capturePhoto = function() {
     // Take picture using device camera and retrieve image as base64-encoded string
     console.log('photo')
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-      destinationType: destinationType.DATA_URL });
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100,
+      correctOrientation: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 1000,
+      destinationType: destinationType.DATA_URL
+      });
   }
 
   function capturePhotoEdit() {
