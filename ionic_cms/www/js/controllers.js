@@ -95,7 +95,7 @@ angular.module('starter.controllers', [])
 
 }])
 
-.controller('SubmitCtrl', ['$scope', '$http', function($scope, $http) {
+.controller('SubmitCtrl', ['$scope', '$http', '$jrCrop', function($scope, $http, $jrCrop) {
   correctOrientation: true
 
   var pictureSource;
@@ -112,11 +112,18 @@ angular.module('starter.controllers', [])
 
   function onPhotoDataSuccess(imageData) {
 
+  $jrCrop.crop({
+    url: imageData,
+    width: 400,
+    height: 300
+  }).then(function(canvas) {
+    // success!
+    var image = canvas.toDataURL();
     var url = 'http://intern-cms-dev.elasticbeanstalk.com/api/images/';
     var params = {
       name: 'sage',
       email: 'sagekieran@gmail.com',
-      image: 'data:image/jpeg;base64,' + imageData
+      image: image
       };
       console.log(params)
 
@@ -131,6 +138,10 @@ angular.module('starter.controllers', [])
             console.log(data);
             console.log('error')
           })
+  }, function() {
+    // User canceled or couldn't load image.
+  });
+
   }
 
 
@@ -140,8 +151,8 @@ angular.module('starter.controllers', [])
     navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100,
       correctOrientation: true,
       encodingType: Camera.EncodingType.JPEG,
-      targetWidth: 1000,
-      destinationType: destinationType.DATA_URL
+      targetWidth: 800,
+      destinationType: destinationType.FILE_URI
       });
   }
 
@@ -154,7 +165,10 @@ angular.module('starter.controllers', [])
   $scope.getPhoto = function(source) {
     // Retrieve image file location from specified source
     navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-      destinationType: destinationType.DATA_URL,
+      correctOrientation: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 800,
+      destinationType: destinationType.FILE_URI,
       sourceType: pictureSource.PHOTOLIBRARY });
   }
 
