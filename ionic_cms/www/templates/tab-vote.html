@@ -4,8 +4,8 @@
       <div class="vote" ng-repeat="photo in photos | orderBy:sortType:sortReverse">
         <img ng-click='load()' class="votePhoto" ng-src="{{photo.image}}">
         </br>
-        <i id='arrow' ng-click='upvote(photo.id)' class="icon ion-chevron-up icon-accessory"> </i> Votes: {{photo.score}}
-        <!-- <p>Votes: {{photo.score}}</p> -->
+        <i id='arrow' ng-click='isClicked || upvote(photo.id);isClicked || (photo.score = photo.score + 1);isClicked=true' class="icon ion-chevron-up icon-accessory"> </i> Votes: {{photo.score}}
+        <!-- <p>{{isClicked}}</p> -->
       </div>
     </ion-list>
   </ion-content>

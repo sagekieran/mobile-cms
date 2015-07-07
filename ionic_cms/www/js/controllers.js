@@ -36,11 +36,11 @@ angular.module('starter.controllers', [])
 
   $scope.sortType     = 'id'; // set the default sort type
   $scope.sortReverse  = true;  // set the default sort order
+  $scope.isClicked = false
 
   $scope.upvote = function(id) {
     $http.get('http://intern-cms-dev.elasticbeanstalk.com/api/images/'+id+'/upvote/').
       success(function(data, status, headers, config) {
-        $scope.load()
       }).
       error(function(data, status, headers, config) {
       });
