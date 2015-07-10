@@ -1,0 +1,30 @@
+ <ion-side-menus>
+    <!-- Main content -->
+    <ion-side-menu-content>
+		<ion-nav-bar class="bar-stable nav-title-slide-ios7">
+		      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+		    </ion-nav-bar>
+		    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+    </ion-side-menu-content>
+      
+    <!-- Left Side Menu -->
+    <ion-side-menu side="left">
+	      <h1 class="title">Show NYC</h1>
+	    <ion-content class="has-header">
+	      <ion-list>
+	      <ion-item nav-clear menu-close href="#/app/vote">
+			  Vote
+		  </ion-item>
+		  <ion-item nav-clear menu-close href="#/app/gallery">
+			  Gallery
+		  </ion-item>
+			<ion-item nav-clear menu-close href="#/app/submit">
+			  Submit
+		  </ion-item>
+		  <ion-item nav-clear menu-close href="#/app/about">
+			  About
+		  </ion-item>
+	      </ion-list>
+	    </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

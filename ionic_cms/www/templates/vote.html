@@ -1,5 +1,11 @@
-<ion-view view-title="Vote">
+<ion-view title="Vote">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
   <ion-content>
+    <div id = "campaign">
+      <h3 id = "campaign-slogan">ENTER THEME HERE</h3>
+    </div>
     <ion-list>
       <div class="vote" ng-repeat="photo in photos | orderBy:sortType:sortReverse">
         <img ng-click='load()' class="votePhoto" ng-src="{{photo.image}}">

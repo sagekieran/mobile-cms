@@ -31,7 +31,8 @@ angular.module('starter.controllers', [])
 // .controller('AboutCtrl', function($scope) {});
 
 // -------------------------------------------------
-
+.controller('AppCtrl', function($scope) {
+})
 .controller('VoteCtrl', ['$scope', 'activePhotos', '$http', function($scope, activePhotos, $http) {
 
   $scope.sortType     = 'id'; // set the default sort type
