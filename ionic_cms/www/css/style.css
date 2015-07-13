@@ -79,7 +79,7 @@ button {
 .about-heading {
   padding: 20px 20px 0px 0px;
   letter-spacing: 2px;
-  font-size: 50px;
+  font-size: 32px;
   font-weight: bold;
   font-family: "Raleway";
   color: #333333;
@@ -90,7 +90,7 @@ button {
 .about-par{
   text-align: left;
   color: #333333;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 150%;
   max-width: 600px;
   margin: 0 auto;
@@ -126,11 +126,12 @@ button {
   height: 100%;
   margin-top: 50px;
   width: 80%;
-  margin: 150px auto;
+  margin: auto;
+  margin-top: 12%;
 }
 #submit-title h3{
   letter-spacing: 2px;
-  font-size: 48px;
+  font-size: 32px;
   color: #333333;
   text-align: left;
   max-width: 95%;
@@ -140,7 +141,7 @@ button {
 #submit-title p {
   color: #333333;
   text-align: left;
-  font-size: 24px;
+  font-size: 18px;
   max-width: 800px;
   margin: 0 auto;
   padding: 5px;
