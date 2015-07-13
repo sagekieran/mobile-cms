@@ -1,0 +1,22 @@
+<ion-view title="SHOW NYC">
+  <ion-nav-buttons side="left">
+    <img class="menu-img" menu-toggle="left" width="22" height="22" src="img/menu48.png">
+  </ion-nav-buttons>
+  <ion-content>
+  	 <div id="submit-title">
+        <h3>Show NYC What You've Got</h3>  <!--Example of a campaign description/call to action that would be on the submit section-->
+        <p>This week's campaign: <strong>TOMS One for One Initiative.</strong></p>
+        <p>TOMS is inviting you to take photos of its shoes and take part in its philanthropic ideals. With every product you purchase, TOMS will help a person in need. One for One.</p>
+    </div>
+    <ion-list>
+      <form>
+        <input type="text" ng-model="name" name="name" placeholder="name" /> <br>
+        <input type="text" ng-model="email" name="email" placeholder="email"/>
+        <button ng-click='storeData(name, email);capturePhoto()'>camera</p><br>
+        <button ng-click='storeData(name, email);getPhoto()'>gallery</p>
+      </form>
+    <!-- <button ng-click='capturePhoto()'>Take Photo</button>
+    <button ng-click='getPhoto()'>Browse</button> -->
+    </ion-list>
+  </ion-content>
+</ion-view>

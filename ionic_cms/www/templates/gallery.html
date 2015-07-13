@@ -1,0 +1,38 @@
+<ion-view title="SHOW NYC">
+  <ion-nav-buttons side="left">
+    <img class="menu-img" menu-toggle="left" width="22" height="22" src="img/menu48.png">
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <div class="filter">
+        <ul class="filter-list">
+          <li><a href="" ng-click="sortType = 'id';sortReverse=true">
+             Newest
+            <span ng-show="sortType == 'id'"></span>
+            </a>
+          </li>
+          <li><a href="" ng-click="sortType='id';sortReverse=false">
+              Oldest
+              <span ng-show="sortReverse == 'false'"></span>
+            </a>
+          </li>
+          <li><a href="" ng-click="sortType='score';sortReverse=true">
+              Trending
+              <span ng-show="sortType == 'score'"></span>
+            </a>
+          </li>
+          <li><a href="" ng-click="random();sortType='rank'">
+            Random
+            <span ng-show="sortType == 'rank'"></span>
+          </a>
+          </li>
+        </ul>
+        </div>
+      <div class="galContainer">
+        <div class="gallery" ng-repeat="photo in photos | orderBy:sortType:sortReverse" >
+          <img class="galleryPhoto" ng-src="{{photo.image}}">
+        </div>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

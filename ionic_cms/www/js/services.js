@@ -3,9 +3,10 @@ angular.module('starter.services', [])
 .factory('activePhotos', function($http) {
 
   var myService = {
-    async: function() {
+    async: function(id) {
+      console.log(id)
       // $http returns a promise, which has a then function, which also returns a promise
-      var promise = $http.get('http://intern-cms-dev.elasticbeanstalk.com/api/images/active_campaigns').then(function (response) {
+      var promise = $http.get('http://intern-cms-dev.elasticbeanstalk.com/api/images/active_campaigns/', {params: {device_id: id}}).then(function (response) {
         // The then function here is an opportunity to modify the response
         console.log(response);
         // The return value gets picked up by the then in the controller.

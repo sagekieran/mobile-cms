@@ -30,55 +30,56 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: "/tab",
+    .state('app', {
+    url: "/app",
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: "templates/menu.html",
+    controller: 'AppCtrl'
   })
 
   // Each tab has its own nav history stack:
 
-  .state('tab.vote', {
+  .state('app.vote', {
     url: '/vote',
     views: {
-      'tab-vote': {
-        templateUrl: 'templates/tab-vote.html',
-        controller: 'VoteCtrl'
-      }
+     'menuContent' :{
+          templateUrl: "templates/vote.html",
+          controller: 'VoteCtrl'
+        }
     }
   })
 
-  .state('tab.gallery', {
+  .state('app.gallery', {
       url: '/gallery',
       views: {
-        'tab-gallery': {
-          templateUrl: 'templates/tab-gallery.html',
-          controller: 'GalleryCtrl'
+        'menuContent' :{
+            templateUrl: 'templates/gallery.html',
+            controller: 'GalleryCtrl'
         }
       }
     })
 
-    .state('tab.about', {
+    .state('app.about', {
       url: '/about',
       views: {
-        'tab-about': {
-          templateUrl: 'templates/tab-about.html',
-          controller: 'AboutCtrl'
+        'menuContent' :{
+            templateUrl: 'templates/about.html',
+            controller: 'AboutCtrl'
         }
       }
     })
 
-  .state('tab.submit', {
+  .state('app.submit', {
     url: '/submit',
     views: {
-      'tab-submit': {
-        templateUrl: 'templates/tab-submit.html',
+      'menuContent' :{
+        templateUrl: 'templates/submit.html',
         controller: 'SubmitCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/vote');
+  $urlRouterProvider.otherwise('/app/vote');
 
 });

@@ -1,0 +1,35 @@
+<ion-view title="SHOW NYC">
+  <ion-nav-buttons side="left">
+    <img class="menu-img" menu-toggle="left" width="22" height="22" src="img/menu48.png">
+  </ion-nav-buttons>
+  <ion-content>
+    <div id="campaign">
+      <h3 id="campaign-slogan">ENTER THEME HERE</h3>
+    </div>
+    <ion-list>
+      </div>
+      <div class="filter">
+            <ul class="filter-list">
+                <li><a href="#/vote" ng-click="sortType = 'id';sortReverse=true; setSelectedFilter('newest');" class="highlight" ng-class="{highlight : 'newest'=== selectedFilter}">
+                  Newest
+                  </a>
+                  <span ng-show="sortType == 'id'"></span>
+                </li>
+
+
+                <li><a href="#/vote" ng-click="sortType='score';sortReverse=true; setSelectedFilter('trending');" ng-class="{highlight : 'trending'=== selectedFilter}">
+                  Trending
+                  </a>
+                  <span ng-show="sortType == 'score'"></span>
+                </li>
+            </ul>
+      </div>
+      <div class="vote" ng-repeat="photo in photos | orderBy:sortType:sortReverse">
+        <img ng-click='load()' class="votePhoto" ng-src="{{photo.image}}">
+        </br>
+        <i id='arrow' ng-click='isClicked || upvote(photo.id);isClicked || (photo.score = photo.score + 1);isClicked=true' class="icon ion-chevron-up icon-accessory"> </i> Votes: {{photo.score}}
+        <!-- <p>{{isClicked}}</p> -->
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
