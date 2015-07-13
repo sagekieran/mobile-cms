@@ -17,9 +17,15 @@ h1 {                                                  /*Heading 1*/
   letter-spacing: 4px;
   font-size: 30px;
 }
+button {
+  padding: 15px;
+  max-width: 150px;
+  margin: 20px auto;
+  display: block;
+  clear: right;
+}
 .vote {
-  margin-top: 20px;
-  border-bottom: 1px #bbb solid;
+ 
 }
 
 .votePhoto {
@@ -87,32 +93,31 @@ h1 {                                                  /*Heading 1*/
   background: #FFAA00;
   width: 100%;
   height: 65px;
-  border-top: 1px solid white;
+  border-top: 0.5px solid white;
   text-align: center;
 }
 .filter-list {
-  width: 450px;
   margin: 0 auto;
   height: inherit;
   list-style-type: none;
 }
 .filter-list li {
-  float: left;
-  font-size: 20px;
   display: inline-block;
+  width: 20%;
+  font-size: 20px;
   height: inherit;
   font-weight: 500;
   color: white;
-  padding-left: 2%;
-  padding-right: 2%;
   text-transform: uppercase;
-  padding-top: 6%;
+  padding-top: 4%;
 }
 
 #submit-title {                                   /*Submit section campaign information*/
   background-color: white;
   height: 100%;
-  opacity: 1.0;
+  margin-top: 50px;
+  width: 80%;
+  margin: 150px auto;
 }
 #submit-title h3{
   letter-spacing: 2px;
@@ -121,8 +126,34 @@ h1 {                                                  /*Heading 1*/
 }
 #submit-title p {
   color: #333333;
-  text-align: center;
+  text-align: left;
   font-size: 20px;
   max-width: 800px;
   margin: 0 auto;
+  padding: 5px;
+  line-height: 130%;
+}
+.footer {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  float: center;
+}
+#campaign {                                    /*Vote Section Campaign Information*/
+  background-color: white;
+  width: 100%;
+  height: 50px;
+}
+#campaign-slogan {
+  padding: 15px;
+  font-size: 20px;
+  font-family:'Raleway';
+  text-align: center;
+  letter-spacing: 3px;
+  width: 100%;
+  color: #333333;
+}
+.menu-img {
+    margin-left: 10px;
+    margin-top: 5px;
 }
