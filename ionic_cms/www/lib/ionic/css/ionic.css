@@ -2328,10 +2328,11 @@ a, button, :focus, a:focus, button:focus, a:active, a:hover {
  */
 a {
   -webkit-user-drag: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: transparent; }
   a[href]:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    background-color: transparent; }
 
 /* ==========================================================================
    Typography
@@ -4252,7 +4253,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   overflow: hidden;
   min-height: 100%;
   max-height: 100%;
-  width: 20%;
+  max-width: 300px;
  }
   .menu .scroll-content {
     z-index: 10; }
@@ -4727,14 +4728,15 @@ ion-tabs.tabs-color-active-dark .tab-item {
     background-color: #444;
     color: #fff; }
   .item[ng-click]:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    background-color: none;}
 
 .list-borderless .item, .item-borderless {
   border-width: 0; }
 
 .item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content, .item .item-content.active, .item .item-content.activated {
-  border-color: #ccc;
-  background-color: #D9D9D9; }
+  opacity: 0.5;
+   }
   .item.active.item-light, .item.activated.item-light, .item-complex.active .item-content.item-light, .item-complex.activated .item-content.item-light, .item .item-content.active.item-light, .item .item-content.activated.item-light {
     border-color: #ccc;
     background-color: #fafafa; }
@@ -4770,6 +4772,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
 
 a.item {
   color: white;
+  background-color: red;
   text-decoration: none; }
   a.item:hover, a.item:focus {
     text-decoration: none;
@@ -5085,7 +5088,6 @@ a.item-content {
   .item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
     margin-top: 16px;
     margin-bottom: 16px; }
-
 .item-divider {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -5360,6 +5362,7 @@ a.item-content {
 
 .padding-right > .list .item {
   margin-right: 0; }
+
 
 /**
  * Badges
