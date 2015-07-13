@@ -100,6 +100,16 @@ angular.module('starter.controllers', [])
 
   var pictureSource;
   var destinationType;
+  // $scope.name = ''
+  // $scope.email = ''
+
+  $scope.storeData = function(name, email) {
+    console.log('clicked')
+    $scope.name = name
+    $scope.email = email
+
+    // var email = $scope.email
+  }
 
 
   document.addEventListener("deviceready",onDeviceReady,false);
@@ -121,11 +131,11 @@ angular.module('starter.controllers', [])
     var image = canvas.toDataURL();
     var url = 'http://intern-cms-dev.elasticbeanstalk.com/api/images/';
     var params = {
-      name: 'sage',
-      email: 'sagekieran@gmail.com',
+      name: $scope.name,
+      email: $scope.email,
       image: image
       };
-      console.log(params)
+      console.log(params.name)
 
     $http.post(url, params)
 

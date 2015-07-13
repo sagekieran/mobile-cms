@@ -1,8 +1,12 @@
 <ion-view view-title="Submit">
   <ion-content>
     <ion-list>
-    <p ng-click='capturePhoto()'>camera</p><br>
-    <p ng-click='getPhoto()'>gallery</p>
+      <form>
+        <input type="text" ng-model="name" name="name" placeholder="name" /> <br>
+        <input type="text" ng-model="email" name="email" placeholder="email"/>
+        <p ng-click='storeData(name, email);capturePhoto()'>camera</p><br>
+        <p ng-click='storeData(name, email);getPhoto()'>gallery</p>
+      </form>
     </ion-list>
   </ion-content>
 </ion-view>
