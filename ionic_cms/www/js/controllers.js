@@ -39,7 +39,7 @@ angular.module('starter.controllers', [])
   $scope.isClicked = false
 
   $scope.upvote = function(id) {
-    $http.get('http://intern-cms-dev.elasticbeanstalk.com/api/images/'+id+'/upvote/').
+    $http.get( 'http://intern-cms-dev.elasticbeanstalk.com/api/images/'+id+'/upvote/', {params: {device_id: device.uuid}}).
       success(function(data, status, headers, config) {
       }).
       error(function(data, status, headers, config) {
@@ -56,7 +56,7 @@ angular.module('starter.controllers', [])
   }
 
   $scope.load = function() {
-    activePhotos.async().then(function(d) {
+    activePhotos.async(device.uuid).then(function(d) {
       $scope.photos = d;
 
       angular.forEach($scope.photos, function(item) {
@@ -65,7 +65,9 @@ angular.module('starter.controllers', [])
     });
   }
 
-  $scope.load()
+  document.addEventListener("deviceready", function(){
+    $scope.load()
+ },true);
 
 }])
 
@@ -100,6 +102,16 @@ angular.module('starter.controllers', [])
 
   var pictureSource;
   var destinationType;
+  // $scope.name = ''
+  // $scope.email = ''
+
+  $scope.storeData = function(name, email) {
+    console.log('clicked')
+    $scope.name = name
+    $scope.email = email
+
+    // var email = $scope.email
+  }
 
 
   document.addEventListener("deviceready",onDeviceReady,false);
@@ -121,11 +133,11 @@ angular.module('starter.controllers', [])
     var image = canvas.toDataURL();
     var url = 'http://intern-cms-dev.elasticbeanstalk.com/api/images/';
     var params = {
-      name: 'sage',
-      email: 'sagekieran@gmail.com',
+      name: $scope.name,
+      email: $scope.email,
       image: image
       };
-      console.log(params)
+      console.log(params.name)
 
     $http.post(url, params)
 
