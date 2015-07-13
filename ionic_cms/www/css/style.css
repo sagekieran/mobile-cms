@@ -31,26 +31,12 @@ button {
   font-size: 22px;
   font-weight: 800;
 }
-.vote {
- 
-}
 
 .votePhoto {
   width: 100%;
 }
 
 .galContainer {
-  border: none;
-  padding:0;
-}
-
-.gallery {
-
-  /*border: .5px black solid;*/
-  display: inline-block;
-  padding: none;
-  /*margin-top: 1em;*/
-  margin-left: .22em;
 }
 
 .galleryPhoto {
