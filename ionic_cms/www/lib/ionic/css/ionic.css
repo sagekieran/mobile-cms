@@ -4244,6 +4244,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
  * Side panel structure
  */
 .menu {
+  background-color: #19A65C;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -4251,7 +4252,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   overflow: hidden;
   min-height: 100%;
   max-height: 100%;
-  width: 275px;
+  width: 20%;
  }
   .menu .scroll-content {
     z-index: 10; }
@@ -4261,7 +4262,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
 .menu-content {
   -webkit-transform: none;
   transform: none;
-  box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.2), 1px 0px 2px rgba(0, 0, 0, 0.2); }
+ }
 
 .menu-open .menu-content .pane, .menu-open .menu-content .scroll-content {
   pointer-events: none; }
@@ -4648,17 +4649,12 @@ ion-tabs.tabs-color-active-dark .tab-item {
  * --------------------------------------------------
  */
 .item {
-  border-color: #ddd;
-  background-color: #fff;
-  color: #444;
   position: relative;
   z-index: 2;
   display: block;
   margin: -1px;
-  padding: 16px;
-  border-width: 1px;
-  border-style: solid;
-  font-size: 16px; }
+  padding: 20px;
+  font-size: 18px; }
   .item h2 {
     margin: 0 0 2px 0;
     font-size: 16px;
@@ -4773,7 +4769,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   white-space: nowrap; }
 
 a.item {
-  color: inherit;
+  color: white;
   text-decoration: none; }
   a.item:hover, a.item:focus {
     text-decoration: none; }
@@ -4795,11 +4791,12 @@ a.item {
   z-index: 2;
   padding: 16px 49px 16px 16px;
   border: none;
-  background-color: white; }
+   }
 
 a.item-content {
   display: block;
-  color: inherit;
+  color: white;
+  background-color: transparent;
   text-decoration: none; }
 
 .item-text-wrap .item, .item-text-wrap .item-content, .item-text-wrap, .item-text-wrap h1, .item-text-wrap h2, .item-text-wrap h3, .item-text-wrap h4, .item-text-wrap h5, .item-text-wrap h6, .item-text-wrap p, .item-complex.item-text-wrap .item-content, .item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
@@ -4862,14 +4859,14 @@ a.item-content {
 .item-complex.item-royal > .item-content {
   border-color: #6b46e5;
   background-color: #886aea;
-  color: #fff; }
+  color: white; }
   .item-complex.item-royal > .item-content.active, .item-complex.item-royal > .item-content:active {
     border-color: #6b46e5;
     background-color: #6b46e5; }
 .item-complex.item-dark > .item-content {
   border-color: #111;
-  background-color: #444;
-  color: #fff; }
+  background-color: red;
+  color: white; }
   .item-complex.item-dark > .item-content.active, .item-complex.item-dark > .item-content:active {
     border-color: #000;
     background-color: #262626; }
@@ -5092,7 +5089,6 @@ a.item-content {
   padding-top: 8px;
   padding-bottom: 8px;
   min-height: 30px;
-  background-color: #f5f5f5;
   color: #222;
   font-weight: 500; }
 
@@ -5101,7 +5097,6 @@ a.item-content {
   text-transform: uppercase;
   font-weight: 300;
   font-size: 13px;
-  background-color: #efeff4;
   color: #555; }
 
 .platform-android .item-divider-platform, .item-divider-android {
@@ -5110,7 +5105,6 @@ a.item-content {
 
 .item-note {
   float: right;
-  color: #aaa;
   font-size: 14px; }
 
 .item-left-editable .item-content, .item-right-editable .item-content {
@@ -5242,7 +5236,6 @@ a.item-content {
       transform: translate3d(0, 0, 0); }
 
 .item-reorder .button.icon {
-  color: #444;
   font-size: 32px; }
 
 .item-reordering {
@@ -5250,8 +5243,7 @@ a.item-content {
   left: 0;
   top: 0;
   z-index: 9;
-  width: 100%;
-  box-shadow: 0px 0px 10px 0px #aaa; }
+  width: 100%; }
   .item-reordering .item-reorder {
     z-index: 9; }
 
@@ -5309,7 +5301,6 @@ a.item-content {
   margin-top: 20px;
   padding: 5px 15px;
   background-color: transparent;
-  color: #222;
   font-weight: bold; }
 
 .card.list .list-item {
@@ -5324,13 +5315,11 @@ a.item-content {
 .card, .list-inset {
   overflow: hidden;
   margin: 20px 10px;
-  border-radius: 2px;
-  background-color: #fff; }
+  border-radius: 2px; }
 
 .card {
   padding-top: 1px;
-  padding-bottom: 1px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+  padding-bottom: 1px; }
   .card .item {
     border-left: 0;
     border-right: 0; }
