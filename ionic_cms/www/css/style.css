@@ -19,10 +19,17 @@ h1 {                                                  /*Heading 1*/
 }
 button {
   padding: 15px;
-  max-width: 150px;
+  width: 250px;
+  height: 60px;
   margin: 20px auto;
   display: block;
   clear: right;
+  background: #FFAA00;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 22px;
+  font-weight: 800;
 }
 .vote {
  
@@ -121,13 +128,17 @@ button {
 }
 #submit-title h3{
   letter-spacing: 2px;
-  font-size: 30px;
+  font-size: 48px;
   color: #333333;
+  text-align: left;
+  max-width: 95%;
+  padding-bottom: 15px;
+  margin: 0 auto;
 }
 #submit-title p {
   color: #333333;
   text-align: left;
-  font-size: 20px;
+  font-size: 24px;
   max-width: 800px;
   margin: 0 auto;
   padding: 5px;
