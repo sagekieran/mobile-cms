@@ -4772,7 +4772,8 @@ a.item {
   color: white;
   text-decoration: none; }
   a.item:hover, a.item:focus {
-    text-decoration: none; }
+    text-decoration: none;
+    background-color: none; }
 
 /**
  * Complex Items

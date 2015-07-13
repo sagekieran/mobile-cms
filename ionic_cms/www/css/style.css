@@ -71,7 +71,7 @@ button {
 
 .description {
   width: 90%;
-  margin: 50px auto;
+  margin: 40px auto;
   background-color: white;
   text-align: left;
 }
@@ -79,7 +79,7 @@ button {
 .about-heading {
   padding: 20px 20px 0px 0px;
   letter-spacing: 2px;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: bold;
   font-family: "Raleway";
   color: #333333;
@@ -124,14 +124,14 @@ button {
 #submit-title {                                   /*Submit section campaign information*/
   background-color: white;
   height: 100%;
-  margin-top: 50px;
+  margin-top: 40px;
   width: 80%;
   margin: auto;
   margin-top: 12%;
 }
 #submit-title h3{
   letter-spacing: 2px;
-  font-size: 32px;
+  font-size: 30px;
   color: #333333;
   text-align: left;
   max-width: 95%;
@@ -141,7 +141,7 @@ button {
 #submit-title p {
   color: #333333;
   text-align: left;
-  font-size: 18px;
+  font-size: 16px;
   max-width: 800px;
   margin: 0 auto;
   padding: 5px;
@@ -152,6 +152,7 @@ button {
   margin: 0 auto;
   text-align: center;
   float: center;
+  font-size: 14px;
 }
 #campaign {                                    /*Vote Section Campaign Information*/
   background-color: white;
