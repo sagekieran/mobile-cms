@@ -1,24 +1,9 @@
 <ion-view view-title="About">
   <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Recent Updates</div>
-      <div class="item item-body">
-        <div>
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
-      <div class="item item-body">
-        <div>
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-        </div>
+    <div class="galContainer">
+      <div class="gallery" ng-repeat="photo in photos | orderBy:sortType:sortReverse" >
+        <img class="galleryPhoto" ng-src="{{photo.image}}">
+        <img id="{{photo.newId || 'hide'}}" src='{{photo.newSrc}}'>
       </div>
     </div>
   </ion-content>

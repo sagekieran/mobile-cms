@@ -180,4 +180,19 @@ angular.module('starter.controllers', [])
 
 }])
 
-.controller('AboutCtrl', function($scope) {});
+.controller('AboutCtrl', ['$scope', 'winningPhotos', function($scope, winningPhotos) {
+
+  $scope.sortType     = 'id'; // set the default sort type
+  $scope.sortReverse  = true;  // set the default sort order
+
+  $scope.load = function() {
+    winningPhotos.async().then(function(d) {
+      $scope.photos = d;
+      photo = $scope.photos[d.length-1]
+      photo.newId = "winning-icon"
+      photo.newSrc = "static/icons/prize-red.png"
+    });
+  }
+  $scope.load()
+
+}]);
