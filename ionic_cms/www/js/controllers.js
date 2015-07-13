@@ -37,6 +37,7 @@ angular.module('starter.controllers', [])
   $scope.sortType     = 'id'; // set the default sort type
   $scope.sortReverse  = true;  // set the default sort order
   $scope.isClicked = false
+  var id = device.uuid
 
   $scope.upvote = function(id) {
     $http.get( 'http://intern-cms-dev.elasticbeanstalk.com/api/images/'+id+'/upvote/', {params: {device_id: device.uuid}}).
@@ -56,7 +57,7 @@ angular.module('starter.controllers', [])
   }
 
   $scope.load = function() {
-    activePhotos.async().then(function(d) {
+    activePhotos.async(id).then(function(d) {
       $scope.photos = d;
 
       angular.forEach($scope.photos, function(item) {
