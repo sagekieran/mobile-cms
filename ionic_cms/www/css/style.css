@@ -109,14 +109,16 @@ button {
   list-style-type: none;
 }
 .filter-list li {
+  max-width: 180px;
   display: inline-block;
-  width: 20%;
-  font-size: 20px;
+  font-size: 12px;
   height: inherit;
   font-weight: 500;
   color: white;
   text-transform: uppercase;
   padding-top: 4%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #submit-title {                                   /*Submit section campaign information*/
@@ -153,11 +155,11 @@ button {
 #campaign {                                    /*Vote Section Campaign Information*/
   background-color: white;
   width: 100%;
-  height: 50px;
+  height: 40px;
 }
 #campaign-slogan {
   padding: 15px;
-  font-size: 20px;
+  font-size: 12px;
   font-family:'Raleway';
   text-align: center;
   letter-spacing: 3px;
