@@ -2731,7 +2731,7 @@ ion-infinite-scroll {
   top: 137px; }
 
 .has-footer {
-  bottom: 44px; }
+  bottom: 25px; }
 
 .has-subfooter {
   bottom: 88px; }
@@ -3087,6 +3087,7 @@ a.subdued {
     .bar.bar-stable .title {
       color: white; }
     .bar.bar-stable.bar-footer {
+      height: 25px;
        }
  
   .bar.bar-positive {
@@ -3114,6 +3115,7 @@ a.subdued {
 
   .bar.bar-assertive {
     background-color:#FFAA00;
+    height: 25px;
     text-align: center;
     color: #fff; }
 
@@ -3467,12 +3469,12 @@ a.subdued {
 .bar-subheader {
   top: 44px;
   display: block;
-  height: 44px; }
+  height: 25px; }
 
 .bar-subfooter {
   bottom: 44px;
   display: block;
-  height: 44px; }
+  height: 25px; }
 
 .nav-bar-block {
   position: absolute;
