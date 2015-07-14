@@ -177,6 +177,32 @@ button {
     margin-left: 10px;
     margin-top: 5px;
 }
+
+#emptyHeart, #fullHeart {
+  height: 25px;
+  width: 25px;
+  margin-left: 8px;
+  display: inline-block;
+  position: absolute;
+}
+
+/*#winning-icon {
+  position: absolute;
+  height: 18%;
+  width: 15%;
+  max-width: 100px;
+  max-height: 100px;
+  top: 0px;
+  padding-top: 0px;
+  right: 0;
+  padding-right: 0px;
+  cursor: default;
+}*/
+
+
+#hide {
+  display: none;
+}
 .highlight {
   opacity: .5;
 }
