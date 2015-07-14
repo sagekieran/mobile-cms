@@ -2,6 +2,7 @@
 
 body {                                            /*Body*/
   font-family: "Raleway";
+  background: #f9f9f9;
 }
 a {
   text-decoration: none;
@@ -30,6 +31,15 @@ button {
   outline: none;
   font-size: 22px;
   font-weight: 800;
+}
+input {
+  display: block;
+  width: 280px;
+  height: 90px;
+  background: #FFAA00;
+  margin: 20px auto;
+  color: white;
+  font-size: "Raleway";
 }
 
 .votePhoto {
