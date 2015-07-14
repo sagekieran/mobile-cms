@@ -9,8 +9,12 @@
         <p>TOMS is inviting you to take photos of its shoes and take part in its philanthropic ideals. With every product you purchase, TOMS will help a person in need. One for One.</p>
     </div>
     <ion-list>
-    <button ng-click='capturePhoto()'>Take Photo</button>
-    <button ng-click='getPhoto()'>Browse</button>
+      <form>
+        <input type="text" ng-model="name" name="name" placeholder="name" /> <br>
+        <input type="text" ng-model="email" name="email" placeholder="email"/>
+        <button ng-click='storeData(name, email);capturePhoto()'>Take Photo</button>
+        <button ng-click='storeData(name, email);getPhoto()'>Browse</button>
+      </form>
     </ion-list>
   </ion-content>
 </ion-view>
