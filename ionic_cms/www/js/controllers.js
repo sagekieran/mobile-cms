@@ -1,38 +1,9 @@
 angular.module('starter.controllers', [])
 
-// .controller('VoteCtrl', function($scope, activePhotos) {
-//
-//   $scope.sortType     = 'id'; // set the default sort type
-//   $scope.sortReverse  = true;  // set the default sort order
-//
-//   activePhotos.async().then(function(d) {
-//     $scope.photos = d;
-//   });
-//
-// })
-//
-// .controller('GalleryCtrl', function($scope, inactivePhotos) {
-//
-//   $scope.sortType     = 'id'; // set the default sort type
-//   $scope.sortReverse  = true;  // set the default sort order
-//
-//   inactivePhotos.async().then(function(d) {
-//     $scope.photos = d;
-//   });
-//
-// })
-//
-// .controller('SubmitCtrl', function($scope) {
-//   $scope.settings = {
-//     enableFriends: true
-//   }
-// })
-//
-// .controller('AboutCtrl', function($scope) {});
 
-// -------------------------------------------------
 .controller('AppCtrl', function($scope) {
 })
+
 .controller('VoteCtrl', ['$scope', 'activePhotos', '$http', function($scope, activePhotos, $http) {
 
   $scope.sortType     = 'id'; // set the default sort type
@@ -72,6 +43,7 @@ angular.module('starter.controllers', [])
   }
 
   $scope.load = function() {
+    console.log('refresh')
     activePhotos.async().then(function(d) {
       $scope.photos = d;
       console.log($scope.photos)
@@ -87,11 +59,10 @@ angular.module('starter.controllers', [])
           else {
             item.loadHeart.id = ("emptyHeart" + item.id);
             item.loadHeart.src = "img/EmptyHeartRed.png";
-            // photo.isClicked=false
           }
       })
+      $scope.$broadcast('scroll.refreshComplete')
     });
-      // document.getElementById("fullHeart").hide;
   }
 
   $scope.selectedFilter = 'newest';
@@ -111,24 +82,18 @@ angular.module('starter.controllers', [])
   $scope.sortType     = 'id'; // set the default sort type
   $scope.sortReverse  = true;  // set the default sort order
 
-  $scope.random = function() {
-   $scope.load()
-  //  $scope.sortType = 'rank'
-  }
+  // $scope.random = function() {
+  //  $scope.load()
+  // }
 
   $scope.load = function() {
     inactivePhotos.async().then(function(d) {
       $scope.photos = d;
-      // return $scope.photos
       console.log('ctrl')
-
-      angular.forEach($scope.photos, function(item) {
-        item.rank = 0.5 - Math.random()
-      });
     });
   }
 
-  $scope.load()
+  $scope.load();
 
 }])
 
@@ -137,15 +102,12 @@ angular.module('starter.controllers', [])
 
   var pictureSource;
   var destinationType;
-  // $scope.name = ''
-  // $scope.email = ''
 
   $scope.storeData = function(name, email) {
     console.log('clicked')
     $scope.name = name
     $scope.email = email
 
-    // var email = $scope.email
   }
 
 
