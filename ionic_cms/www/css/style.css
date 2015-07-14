@@ -106,6 +106,26 @@ button {
   padding-left: 5px;
   padding-right: 5px;
 }
+#campaignFilter > img {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: -22px;
+  pointer-events: none;
+}
+
+#campaign-list {
+  text-transform: uppercase;
+  color: white;
+  z-index: 10;
+  border: none;
+  outline:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  background: transparent;
+  cursor:pointer;
+  width: 110px;
+}
 
 #submit-title {                                   /*Submit section campaign information*/
   background-color: white;
