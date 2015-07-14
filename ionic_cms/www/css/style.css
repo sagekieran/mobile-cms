@@ -114,6 +114,7 @@ button {
 }
 
 #campaign-list {
+  font-size: 12px;
   text-transform: uppercase;
   color: white;
   z-index: 10;
