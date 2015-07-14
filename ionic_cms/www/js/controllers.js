@@ -64,6 +64,10 @@ angular.module('starter.controllers', [])
       $scope.$broadcast('scroll.refreshComplete')
     });
   }
+  $scope.selectedFilter = 'newest';
+  $scope.setSelectedFilter = function(selectedFilter) {
+      $scope.selectedFilter = selectedFilter;
+   }
 
   $scope.selectedFilter = 'newest';
   $scope.setSelectedFilter = function(selectedFilter) {
@@ -81,6 +85,29 @@ angular.module('starter.controllers', [])
 
   $scope.sortType     = 'id'; // set the default sort type
   $scope.sortReverse  = true;  // set the default sort order
+  $scope.filterOptions = {
+      opts: [
+        {id : 2, name : 'Campaigns', campaign: 'All' }
+      ]
+    };
+
+
+    $scope.filterItem = {
+     opt: $scope.filterOptions.opts[0]
+   }
+
+
+
+
+    $scope.customFilter = function (data) {
+    if (data.campaign === $scope.filterItem.opt.campaign) {
+      return true;
+    } else if ($scope.filterItem.opt.campaign === "All") {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   // $scope.random = function() {
   //  $scope.load()
@@ -90,8 +117,29 @@ angular.module('starter.controllers', [])
     inactivePhotos.async().then(function(d) {
       $scope.photos = d;
       console.log('ctrl')
+      angular.forEach($scope.photos, function(item) {
+        if ($scope.filterOptions.opts.indexOf(item.campaign) == -1) {
+          console.log(item)
+          $scope.filterOptions.opts.push({name: item.campaign, campaign: item.campaign}, item.campaign)
+        }
+      });
+      angular.forEach($scope.filterOptions.opts, function(item, key){
+        if (item.name == undefined) {
+          console.log(item)
+          $scope.filterOptions.opts.splice(key,1)
+        }
+        else {
+          // console.log(item)
+        }
+      })
+      console.log($scope.filterOptions.opts)
     });
   }
+
+  $scope.selectedFilter = 'newest';
+  $scope.setSelectedFilter = function(selectedFilter) {
+      $scope.selectedFilter = selectedFilter;
+   }
 
   $scope.load();
 
