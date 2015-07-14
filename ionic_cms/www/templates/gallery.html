@@ -6,25 +6,24 @@
     <ion-list>
       <div class="filter">
         <ul class="filter-list">
-          <li><a href="" ng-click="sortType = 'id';sortReverse=true">
+          <li><a href="" ng-click="sortType = 'id';sortReverse=true; setSelectedFilter('newest');" class="highlight" ng-class="{highlight : 'newest'=== selectedFilter}">
              Newest
             <span ng-show="sortType == 'id'"></span>
             </a>
           </li>
-          <li><a href="" ng-click="sortType='id';sortReverse=false">
+          <li><a href="" ng-click="sortType='id';sortReverse=false; setSelectedFilter('oldest');" class="highlight" ng-class="{highlight : 'oldest'=== selectedFilter}">
               Oldest
               <span ng-show="sortReverse == 'false'"></span>
             </a>
           </li>
-          <li><a href="" ng-click="sortType='score';sortReverse=true">
+          <li><a href="" ng-click="sortType='score';sortReverse=true; setSelectedFilter('trending');" ng-class="{highlight : 'trending'=== selectedFilter}">
               Trending
               <span ng-show="sortType == 'score'"></span>
             </a>
           </li>
-          <li><a href="" ng-click="random();sortType='rank'">
-            Random
-            <span ng-show="sortType == 'rank'"></span>
-          </a>
+           <li id="campaignFilter">
+            <select id='campaign-list' ng-model="filterItem.opt" ng-options="item.name for item in filterOptions.opts"></select>
+            <img width="10" class="dropdown-img" height="10" src="static/icons/arrowdown.png"/>
           </li>
         </ul>
         </div>
