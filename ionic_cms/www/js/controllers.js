@@ -40,8 +40,9 @@ angular.module('starter.controllers', [])
   $scope.isClicked = false
 
   $scope.upvote = function(id) {
-    $http.get( 'http://intern-cms-dev.elasticbeanstalk.com/api/images/'+id+'/upvote/', {params: {device_id: device.uuid}}).
+    $http.get( 'http://intern-cms-dev.elasticbeanstalk.com/api/images/'+id+'/upvote/').
       success(function(data, status, headers, config) {
+        // $scope.load()
       }).
       error(function(data, status, headers, config) {
       });
@@ -56,15 +57,48 @@ angular.module('starter.controllers', [])
       });
   }
 
-  $scope.load = function() {
-    activePhotos.async(device.uuid).then(function(d) {
-      $scope.photos = d;
+  $scope.changeImage = function(photo){
+    // console.log($sco.isClicked)
+    console.log(photo.id);
+    // console.log(document.getElementById("emptyHeart"+photo.id))
+    document.getElementById("emptyHeart"+photo.id).src = 'img/FullHeartRed.png'
+    document.getElementById("emptyHeart"+photo.id).id = 'fullHeart'
+    // photo.isClicked=true
+  };
 
-      angular.forEach($scope.photos, function(item) {
-        item.rank = 0.5 - Math.random()
-      });
-    });
+
+  $scope.reloadRoute = function($scope) {
+   $route.reload()
   }
+
+  $scope.load = function() {
+    activePhotos.async().then(function(d) {
+      $scope.photos = d;
+      console.log($scope.photos)
+      }).then(function(d){
+        angular.forEach($scope.photos, function(item) {
+          item.loadHeart = {};
+          if (item.voted){
+            item.loadHeart.id = "fullHeart";
+            item.loadHeart.src="img/FullHeartRed.png";
+            item.isClicked=true;
+
+            }
+          else {
+            item.loadHeart.id = ("emptyHeart" + item.id);
+            item.loadHeart.src = "img/EmptyHeartRed.png";
+            // photo.isClicked=false
+          }
+      })
+    });
+      // document.getElementById("fullHeart").hide;
+  }
+
+  $scope.selectedFilter = 'newest';
+  $scope.setSelectedFilter = function(selectedFilter) {
+      $scope.selectedFilter = selectedFilter;
+      console.log(selectedFilter);
+   }
 
   document.addEventListener("deviceready", function(){
     $scope.load()
@@ -203,7 +237,7 @@ angular.module('starter.controllers', [])
       $scope.photos = d;
       photo = $scope.photos[d.length-1]
       photo.newId = "winning-icon"
-      photo.newSrc = "static/icons/prize-red.png"
+      photo.newSrc = "img/wreath3.png"
     });
   }
   $scope.load()
