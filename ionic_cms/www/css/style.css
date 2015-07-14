@@ -108,9 +108,7 @@ button {
 }
 #campaignFilter > img {
   position: absolute;
-  margin-top: 5px;
   margin-left: -22px;
-  pointer-events: none;
 }
 
 #campaign-list {
@@ -159,7 +157,7 @@ button {
   margin: 0 auto;
   text-align: center;
   float: center;
-  font-size: 10px;
+  font-size: 9px;
 }
 #campaign {                                    /*Vote Section Campaign Information*/
   background-color: white;
