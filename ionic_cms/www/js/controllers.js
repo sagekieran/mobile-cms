@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
   $scope.isClicked = false
 
   $scope.upvote = function(id) {
-    $http.get( 'http://intern-cms-dev.elasticbeanstalk.com/api/images/'+id+'/upvote/').
+    $http.get( 'http://intern-cms-dev.elasticbeanstalk.com/api/images/'+id+'/upvote/', {params: {device_id: device.uuid}}).
       success(function(data, status, headers, config) {
         // $scope.load()
       }).
@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
 
   $scope.load = function() {
     console.log('refresh')
-    activePhotos.async().then(function(d) {
+    activePhotos.async(device.uuid).then(function(d) {
       $scope.photos = d;
       console.log($scope.photos)
       }).then(function(d){
