@@ -1,5 +1,17 @@
 angular.module('starter.services', [])
 
+.factory('activeCampaign', function($http){
+  var myService = {
+    async: function() {
+      var promise = $http.get('http://intern-cms-dev.elasticbeanstalk.com/api/campaigns/active/').then(function (response){
+        return response.data[0];
+      });
+      return promise;
+    }
+  } 
+  return myService;
+})
+
 .factory('activePhotos', function($http) {
 
   var myService = {
@@ -25,7 +37,7 @@ angular.module('starter.services', [])
     var myService = {
       async: function() {
         // $http returns a promise, which has a then function, which also returns a promise
-        var promise = $http.get('http://intern-cms-dev.elasticbeanstalk.com/api/images/inactive_campaigns').then(function (response) {
+        var promise = $http.get('http://intern-cms-dev.elasticbeanstalk.com/api/images/inactive_campaigns/').then(function (response) {
           // The then function here is an opportunity to modify the response
           console.log(response);
           // The return value gets picked up by the then in the controller.
