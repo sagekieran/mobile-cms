@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
   $scope.isClicked = false
 
   $scope.upvote = function(id) {
-    $http.get( 'http://intern-cms-dev.elasticbeanstalk.com/api/images/'+id+'/upvote/', {params: {device_id: device.uuid}}).
+    $http.get( 'http://intern-cms-dev.elasticbeanstalk.com/api/images/'+id+'/upvote/', {params: {device_id: id}}).
       success(function(data, status, headers, config) {
         // $scope.load()
       }).

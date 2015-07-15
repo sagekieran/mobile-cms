@@ -2,6 +2,7 @@
 
 body {                                            /*Body*/
   font-family: "Raleway";
+  background: #f9f9f9;
 }
 a {
   text-decoration: none;
@@ -30,6 +31,15 @@ button {
   outline: none;
   font-size: 22px;
   font-weight: 800;
+}
+input {
+  width: 280px;
+  height: 90px;
+  background: #FFAA00;
+  margin: 20px auto;
+  color: white;
+  font-size: "Raleway";
+  padding: 15px;
 }
 
 .votePhoto {
@@ -91,20 +101,21 @@ button {
 }
 .filter-list {
   margin: 0 auto;
+  text-align: center;
   height: inherit;
   list-style-type: none;
 }
 .filter-list li {
   max-width: 180px;
   display: inline-block;
-  font-size: 12px;
+  font-size: 11px;
   height: inherit;
   font-weight: 500;
   color: white;
   text-transform: uppercase;
   padding-top: 5%;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 #campaignFilter > img {
   position: absolute;
@@ -112,7 +123,7 @@ button {
 }
 
 #campaign-list {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   color: white;
   z-index: 10;
@@ -203,7 +214,7 @@ button {
 #hide {
   display: none;
 }
-.highlight {
+.current, .highlight {
   opacity: .5;
 }
 #share-buttons {                                 /*Share icon positioning*/
