@@ -232,7 +232,7 @@ angular.module('starter.controllers', [])
   // Called if something bad happens.
   //
   function onFail(message) {
-    alert('Failed because: ' + message);
+    console.log('Failed because: ' + message);
   }
 
 }])
