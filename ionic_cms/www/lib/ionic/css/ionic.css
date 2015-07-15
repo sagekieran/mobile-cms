@@ -4774,7 +4774,6 @@ ion-tabs.tabs-color-active-dark .tab-item {
 
 a.item {
   color: white;
-  background-color: red;
   text-decoration: none; }
   a.item:hover, a.item:focus {
     text-decoration: none;
@@ -4871,7 +4870,6 @@ a.item-content {
     background-color: #6b46e5; }
 .item-complex.item-dark > .item-content {
   border-color: #111;
-  background-color: red;
   color: white; }
   .item-complex.item-dark > .item-content.active, .item-complex.item-dark > .item-content:active {
     border-color: #000;
@@ -4907,15 +4905,7 @@ a.item-content {
   min-height: 30px;
   font-size: 28px; }
 
-.item-icon-left {
-  padding-left: 54px; }
-  .item-icon-left .icon {
-    left: 11px; }
 
-.item-complex.item-icon-left {
-  padding-left: 0; }
-  .item-complex.item-icon-left .item-content {
-    padding-left: 54px; }
 
 .item-icon-right {
   padding-right: 54px; }
