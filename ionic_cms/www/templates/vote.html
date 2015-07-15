@@ -3,6 +3,10 @@
     <img class="menu-img" menu-toggle="left" width="22" height="22" src="img/menu48.png">
   </ion-nav-buttons>
   <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="load()">
+    </ion-refresher>
     <div id="campaign">
       <h3 id="campaign-slogan">ENTER THEME HERE</h3>
     </div>
@@ -25,9 +29,19 @@
             </ul>
       </div>
       <div class="vote" ng-repeat="photo in photos | orderBy:sortType:sortReverse">
-        <img ng-click='load()' class="votePhoto" ng-src="{{photo.image}}">
+      <style>
+        #emptyHeart{{photo.id}}{
+          height: 25px;
+          width: 25px;
+          position: absolute;
+          display: inline-block;
+          margin-left: 8px;
+        }
+      </style>
+        <img class="votePhoto" ng-src="{{photo.image}}">
         </br>
-        <i id='arrow' ng-click='isClicked || upvote(photo.id);isClicked || (photo.score = photo.score + 1);isClicked=true' class="icon ion-chevron-up icon-accessory"> </i> Votes: {{photo.score}}
+        <img class="hvr-grow" id = '{{photo.loadHeart.id}}' ng-click='photo.isClicked || upvote(photo.id);photo.isClicked || (photo.score = photo.score + 1);photo.isClicked || changeImage(photo);photo.isClicked=true' src="{{photo.loadHeart.src}}"/>
+        <p>{{photo.score}}</p>
         <!-- <p>{{isClicked}}</p> -->
       </div>
     </ion-list>

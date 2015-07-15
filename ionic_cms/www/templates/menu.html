@@ -1,4 +1,4 @@
- <ion-side-menus width="150">
+ <ion-side-menus>
     <!-- Main content -->
     <ion-side-menu-content>
 		<ion-nav-bar class="bar-stable nav-title-slide-ios7">
@@ -8,7 +8,7 @@
     </ion-side-menu-content>
       
     <!-- Left Side Menu -->
-    <ion-side-menu side="left">
+    <ion-side-menu width="175" side="left">
 	    <ion-content class="has-header">
 	      <ion-list>
 	      <ion-item nav-clear menu-close href="#/app/vote">
@@ -23,6 +23,17 @@
 		  <ion-item nav-clear menu-close href="#/app/about">
 			  About
 		  </ion-item>
+		   <div id="share-buttons"> <!--Share via social media-->
+	            <a href="http://www.facebook.com/sharer.php?u=https://controlgroup.com" target="_blank">
+	                <img width="16" height="16" src="img/FacebookWhite.png" alt="Facebook" />
+	            </a>
+	            <a href="http://www.twitter.com/share?url=http://www.controlgroup.com/&amp;name=Control Group Interns&hashtags=IntersAtCG" target="_blank">
+	                <img width="16" height="16" src="img/TwitterWhite.png" alt="Twitter" />
+	            </a>
+	            <a href="https://plus.google.com/share?url=https://controlgroup.com" target="_blank">
+	                <img width="16" height="16" src="img/GoogleWhite.png" alt="Google" />
+	            </a>
+         </div>
 	      </ion-list>
 	    </ion-content>
     </ion-side-menu>

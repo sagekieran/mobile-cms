@@ -13,6 +13,12 @@
             <p class="about-par">The voting for any given campaign opens on Monday at 3:00pm and closes later that same week on at 3:00pm on Friday. The winning photo will be announced the day after voting closes, so remember to stay tuned! The following week's campaign details will be announced 24 hours before the voting period for that campaign beings. Go out there and Show NYC what you've got!</p>
         </section>
         <h3 id="grid-head" class="about-heading">Check Out Past Campaign Winners</h3>
+        <div class="galContainer">
+          <div class="gallery" ng-repeat="photo in photos | orderBy:sortType:sortReverse" >
+            <img class="galleryPhoto" ng-src="{{photo.image}}">
+            <img id="{{photo.newId || 'hide'}}" src='{{photo.newSrc}}'>
+          </div>
+        </div>
     </div>
   </ion-content>
 </ion-view>
