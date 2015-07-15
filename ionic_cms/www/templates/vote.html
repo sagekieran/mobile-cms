@@ -8,7 +8,7 @@
       on-refresh="load()">
     </ion-refresher>
     <div id="campaign">
-      <h3 id="campaign-slogan">ENTER THEME HERE</h3>
+      <h3 id="campaign-slogan">{{campaign.name}}</h3>
     </div>
     <ion-list>
       </div>
@@ -40,8 +40,10 @@
       </style>
         <img on-double-tap='photo.isClicked || upvote(photo.id);photo.isClicked || (photo.score = photo.score + 1);photo.isClicked || changeImage(photo);photo.isClicked=true' class="votePhoto" ng-src="{{photo.image}}">
         </br>
-        <img class="hvr-grow" id = '{{photo.loadHeart.id}}' ng-click='photo.isClicked || upvote(photo.id);photo.isClicked || (photo.score = photo.score + 1);photo.isClicked || changeImage(photo);photo.isClicked=true' src="{{photo.loadHeart.src}}"/>
-        <p>{{photo.score}}</p>
+        <div class="vote-space">
+          <img class="hvr-grow" id = '{{photo.loadHeart.id}}' ng-click='photo.isClicked || upvote(photo.id);photo.isClicked || (photo.score = photo.score + 1);photo.isClicked || changeImage(photo);photo.isClicked=true' src="{{photo.loadHeart.src}}"/>
+          <span id="photoScore">{{photo.score}}</span>
+        </div>
         <!-- <p>{{isClicked}}</p> -->
       </div>
     </ion-list>

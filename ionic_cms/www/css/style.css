@@ -2,6 +2,7 @@
 
 body {                                            /*Body*/
   font-family: "Raleway";
+  background: #f9f9f9;
 }
 a {
   text-decoration: none;
@@ -62,6 +63,7 @@ input[type = "email"]{                              /*Text input*/
   vertical-align: center;
   float: center;
 }
+
 .votePhoto {
   width: 100%;
 }
@@ -123,22 +125,23 @@ input[type = "email"]{                              /*Text input*/
   margin: 0 auto;
   height: inherit;
   list-style-type: none;
+  max-width: 80%;
 }
 .filter-list li {
-  max-width: 180px;
+  max-width: 50%;
   display: inline-block;
   font-size: 12px;
   height: inherit;
   font-weight: 500;
   color: white;
   text-transform: uppercase;
-  padding-top: 5%;
+  padding-top: 6%;
   padding-left: 5px;
   padding-right: 5px;
 }
 #campaignFilter > img {
   position: absolute;
-  margin-left: -22px;
+  margin-left: -14px;
 }
 
 #campaign-list {
@@ -155,7 +158,12 @@ input[type = "email"]{                              /*Text input*/
   cursor:pointer;
   width: 110px;
 }
-
+#campaignFilter {
+  width: 28%;
+  margin: 0 auto;
+  padding-top: 5%;
+  text-align: center;
+}
 #submit-title {                                   /*Submit section campaign information*/
   background-color: white;
   height: 100%;
@@ -216,6 +224,25 @@ input[type = "email"]{                              /*Text input*/
   display: inline-block;
   position: absolute;
 }
+.vote-space {
+  cursor: pointer;
+  font-size: 0;
+  overflow: none;
+  position: absolute;
+  margin-top: -35px;
+  width: 75px;
+  height: 30px;
+  padding-top: 5px;
+  background-color: rgba(255,  255, 255, 0.3);
+}
+#photoScore {
+  display: inline-block;
+  color: #DE4831;
+  font-size: 18px;
+  font-style: "Raleway";
+  margin-left: 45px;
+  margin-top: -1px;
+}
 
 /*#winning-icon {
   position: absolute;
@@ -234,7 +261,7 @@ input[type = "email"]{                              /*Text input*/
 #hide {
   display: none;
 }
-.highlight {
+.current, .highlight {
   opacity: .5;
 }
 #share-buttons {                                 /*Share icon positioning*/
