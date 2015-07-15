@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
 .controller('AppCtrl', function($scope) {
 })
 
-.controller('VoteCtrl', ['$scope', 'activePhotos', '$http', function($scope, activePhotos, $http) {
+.controller('VoteCtrl', ['$scope', 'activePhotos', 'activeCampaign', '$http', function($scope, activePhotos, activeCampaign, $http) {
 
   $scope.sortType     = 'id'; // set the default sort type
   $scope.sortReverse  = true;  // set the default sort order
@@ -46,7 +46,6 @@ angular.module('starter.controllers', [])
     console.log('refresh')
     activePhotos.async(device.uuid).then(function(d) {
       $scope.photos = d;
-      console.log($scope.photos)
       }).then(function(d){
         angular.forEach($scope.photos, function(item) {
           item.loadHeart = {};
@@ -62,6 +61,9 @@ angular.module('starter.controllers', [])
           }
       })
       $scope.$broadcast('scroll.refreshComplete')
+    })
+    activeCampaign.async().then(function(d){
+      $scope.campaign = d;
     });
   }
   $scope.selectedFilter = 'newest';
@@ -145,7 +147,7 @@ angular.module('starter.controllers', [])
 
 }])
 
-.controller('SubmitCtrl', ['$scope', '$http', '$jrCrop', function($scope, $http, $jrCrop) {
+.controller('SubmitCtrl', ['$scope', '$http', '$jrCrop', 'activeCampaign', function($scope, $http, $jrCrop, activeCampaign) {
   correctOrientation: true
 
   var pictureSource;
@@ -229,6 +231,13 @@ angular.module('starter.controllers', [])
       sourceType: pictureSource.PHOTOLIBRARY });
   }
 
+  $scope.load = function(){
+    activeCampaign.async().then(function(d){
+      $scope.campaign = d;
+    })
+  }
+
+  $scope.load();
   // Called if something bad happens.
   //
   function onFail(message) {
