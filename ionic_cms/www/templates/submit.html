@@ -10,8 +10,8 @@
     </div>
     <ion-list>
       <form>
-        <input type="text" ng-model="name" name="name" placeholder="name" /> <br>
-        <input type="text" ng-model="email" name="email" placeholder="email"/>
+        <input id='name' type="text" ng-model="name" name="name" placeholder="name" /> <br>
+        <input id='email' type="text" ng-model="email" name="email" placeholder="email"/>
         <button ng-click='storeData(name, email);capturePhoto()'>Take Photo</button>
         <button ng-click='storeData(name, email);getPhoto()'>Browse</button>
       </form>

@@ -184,16 +184,19 @@ angular.module('starter.controllers', [])
       };
       console.log(params.name)
 
-    $http.post(url, params)
+    $http.post(url, params, $scope)
 
           .success(function(data) {
               console.log(data);
-              console.log('success')
+              alert('Your image has been uploaded and is awaiting approval by a moderator.')
+              console.log($scope.name)
+              document.getElementById("name").value = ''
+              document.getElementById("email").value = ''
 
           })
           .error(function(data){
             console.log(data);
-            console.log('error')
+            alert('An error occured, please try again in a few minutes.')
           })
   }, function() {
     // User canceled or couldn't load image.
