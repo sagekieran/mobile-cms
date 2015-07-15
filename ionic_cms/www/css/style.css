@@ -206,11 +206,19 @@ input {
   font-size: 0;
   overflow: none;
   position: absolute;
-  margin-top: -35px;
+  margin-top: -30px;
   width: 80px;
-  height: 60px;
+  height: 30px;
   padding-top: 5px;
   background-color: rgba(255,  255, 255, 0.5);
+}
+#photoScore {
+  display: inline-block;
+  color: #DE4831;
+  font-size: 18px;
+  font-style: "Raleway";
+  margin-left: 45px;
+  margin-top: -1px;
 }
 
 /*#winning-icon {
