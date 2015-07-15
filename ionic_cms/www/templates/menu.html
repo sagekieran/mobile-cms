@@ -9,7 +9,7 @@
 
     <!-- Left Side Menu -->
     <ion-side-menu width="175" side="left">
-	    <ion-content class="has-header">
+	    <ion-content ng-controller="ShareCtrl" class="has-header">
 	      <ion-list>
 	          <ul class="list">  
               <a nav-clear menu-close ui-sref="app.vote" ui-sref-active="current" class="item item-icon-left">Vote</a>
@@ -17,17 +17,11 @@
               <a nav-clear menu-close ui-sref="app.submit" ui-sref-active="current" class="item item-icon-left">Submit</a>
               <a nav-clear menu-close ui-sref="app.about" ui-sref-active="current" class="item item-icon-left">About</a>
            </ul>
-		   <div id="share-buttons"> <!--Share via social media-->
-	            <a href="http://www.facebook.com/sharer.php?u=https://controlgroup.com" target="_blank">
-	                <img width="16" height="16" src="img/FacebookWhite.png" alt="Facebook" />
-	            </a>
-	            <a href="http://www.twitter.com/share?url=http://www.controlgroup.com/&amp;name=Control Group Interns&hashtags=IntersAtCG" target="_blank">
-	                <img width="16" height="16" src="img/TwitterWhite.png" alt="Twitter" />
-	            </a>
-	            <a href="https://plus.google.com/share?url=https://controlgroup.com" target="_blank">
-	                <img width="16" height="16" src="img/GoogleWhite.png" alt="Google" />
-	            </a>
-         </div>
+		   <div  id="share-buttons"> <!--Share via social media-->
+	            <img width="16" height="16" ng-click="shareViaFacebook('Hey check out this cool app!', '/img/GoogleWhite.png', 'http://www.controlgroup.com/')" src="img/FacebookWhite.png" alt="Facebook" />
+	            <img width="16" ng-click="shareViaTwitter('Hey check out this cool app!', 'img/TwitterWhite.png', 'http://www.controlgroup.com/')" height="16" src="img/TwitterWhite.png" alt="Twitter" />
+	            <img width="16" height="16" ng-click="shareViaWhatsApp('Demo message', 'img/TwitterWhite.png', 'http://www.controlgroup.com/')" src="img/GoogleWhite.png" alt="Google" />
+      </div>
 	      </ion-list>
 	    </ion-content>
     </ion-side-menu>
