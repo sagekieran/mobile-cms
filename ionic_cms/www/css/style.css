@@ -213,7 +213,7 @@ input {
 #hide {
   display: none;
 }
-.current {
+.current, .highlight {
   opacity: .5;
 }
 #share-buttons {                                 /*Share icon positioning*/
