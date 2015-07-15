@@ -184,12 +184,11 @@ angular.module('starter.controllers', [])
       };
       console.log(params.name)
 
-    $http.post(url, params, $scope)
+    $http.post(url, params)
 
           .success(function(data) {
               console.log(data);
               alert('Your image has been uploaded and is awaiting approval by a moderator.')
-              console.log($scope.name)
               document.getElementById("name").value = ''
               document.getElementById("email").value = ''
 
