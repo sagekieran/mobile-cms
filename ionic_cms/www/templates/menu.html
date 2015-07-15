@@ -2,11 +2,11 @@
     <!-- Main content -->
     <ion-side-menu-content>
 		<ion-nav-bar class="bar-stable nav-title-slide-ios7">
-		      
+		      <ion-nav-back-button class="button-clear"></ion-nav-back-button>
 		  </ion-nav-bar>
 		  <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
     </ion-side-menu-content>
-      
+
     <!-- Left Side Menu -->
     <ion-side-menu width="175" side="left">
 	    <ion-content class="has-header">
@@ -17,8 +17,10 @@
               <a nav-clear menu-close ui-sref="app.submit" ui-sref-active="current" class="item item-icon-left">Submit</a>
               <a nav-clear menu-close ui-sref="app.about" ui-sref-active="current" class="item item-icon-left">About</a>
            </ul>
-		  				 <div id="share-buttons"> <!--Share via social media-->
-	                <img ng-click="shareViaTwitter('some message', null, 'http://blog.nraboy.com')" width="16" height="16" src="img/FacebookWhite.png" alt="Facebook" />
+		   <div id="share-buttons"> <!--Share via social media-->
+	            <a href="http://www.facebook.com/sharer.php?u=https://controlgroup.com" target="_blank">
+	                <img width="16" height="16" src="img/FacebookWhite.png" alt="Facebook" />
+	            </a>
 	            <a href="http://www.twitter.com/share?url=http://www.controlgroup.com/&amp;name=Control Group Interns&hashtags=IntersAtCG" target="_blank">
 	                <img width="16" height="16" src="img/TwitterWhite.png" alt="Twitter" />
 	            </a>

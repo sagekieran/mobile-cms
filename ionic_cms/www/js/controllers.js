@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
 
   $scope.load = function() {
     console.log('refresh')
-    activePhotos.async().then(function(d) {
+    activePhotos.async(device.uuid).then(function(d) {
       $scope.photos = d;
       console.log($scope.photos)
       }).then(function(d){
