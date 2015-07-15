@@ -30,7 +30,7 @@ angular.module('starter.controllers', [])
 
   $scope.changeImage = function(photo){
     // console.log($sco.isClicked)
-    console.log(photo.id);
+    // console.log(photo.id);
     // console.log(document.getElementById("emptyHeart"+photo.id))
     document.getElementById("emptyHeart"+photo.id).src = 'img/FullHeartRed.png'
     document.getElementById("emptyHeart"+photo.id).id = 'fullHeart'
@@ -151,11 +151,22 @@ angular.module('starter.controllers', [])
   var pictureSource;
   var destinationType;
 
-  $scope.storeData = function(name, email) {
-    console.log('clicked')
-    $scope.name = name
-    $scope.email = email
-
+  $scope.storeData = function(name, email, i) {
+  //   console.log('clicked')
+    if (name && email && i == 1) {
+      $scope.name = name
+      $scope.email = email
+      $scope.capturePhoto()
+    }
+   else if (name && email && i == 2) {
+      $scope.name = name
+      $scope.email = email
+      $scope.getPhoto()
+    }
+    else {
+      alert('Please enter your name and email address.')
+      return false
+    }
   }
 
 
@@ -189,8 +200,8 @@ angular.module('starter.controllers', [])
           .success(function(data) {
               console.log(data);
               alert('Your image has been uploaded and is awaiting approval by a moderator.')
-              document.getElementById("name").value = ''
-              document.getElementById("email").value = ''
+              // document.getElementById("name").value = ''
+              // document.getElementById("email").value = ''
 
           })
           .error(function(data){
