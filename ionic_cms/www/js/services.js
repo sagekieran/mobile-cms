@@ -1,5 +1,17 @@
 angular.module('starter.services', [])
 
+.factory('activeCampaign', function($http){
+  var myService = {
+    async: function() {
+      var promise = $http.get('http://intern-cms-dev.elasticbeanstalk.com/api/campaigns/active/').then(function (response){
+        return response.data[0];
+      });
+      return promise;
+    }
+  } 
+  return myService;
+})
+
 .factory('activePhotos', function($http) {
 
   var myService = {
