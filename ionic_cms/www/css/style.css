@@ -33,13 +33,13 @@ button {
   font-weight: 800;
 }
 input {
-  display: block;
   width: 280px;
   height: 90px;
   background: #FFAA00;
   margin: 20px auto;
   color: white;
   font-size: "Raleway";
+  padding: 15px;
 }
 
 .votePhoto {
