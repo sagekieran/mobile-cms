@@ -274,4 +274,34 @@ angular.module('starter.controllers', [])
   }
   $scope.load()
 
-}]);
+}])
+
+.controller("ShareCtrl", function($scope, $cordovaSocialSharing) {
+    $scope.shareAnywhere = function() {
+        $cordovaSocialSharing.share("Hey check out this cool app for putting content on the MTA Kiosk!", "Cool Contest!", "img/GoogleWhite.png", "http://www.intern-cms-dev.elasticbeanstalk.com");
+    }
+   $scope.shareViaTwitter = function(message, image, link) {
+    console.log("Twitter");
+     $cordovaSocialSharing
+       .shareViaTwitter(message, image, link)
+       .then(function(result) {
+         // Success!
+         alert("success : "+result);
+       }, function(err) {
+         // An error occurred. Show a message to the user
+         alert("Cannot share on Twitter");
+       });
+   }
+
+   $scope.shareViaFacebook = function(message, image, link) {
+    console.log("facebook");
+     $cordovaSocialSharing
+       .shareViaFacebook(message, image, link)
+       .then(function(result) {
+         // Success!
+       }, function(err) {
+         // An error occurred. Show a message to the user
+         alert("Cannot share on Facebook");
+       });
+   }
+});
