@@ -70,10 +70,14 @@ input[type = "email"]{                              /*Text input*/
 }
 .galleryPhoto, .votePhoto {
   width: 100%;
-  height: auto;
+  height: 100%;
+  overflow: none;
 }
 .galleryPhoto {
   display: block;
+}
+.votePhoto {
+  display: inline-block;
 }
  #arrow {
    padding: 20px;
@@ -243,7 +247,7 @@ input[type = "email"]{                              /*Text input*/
   font-size: 0;
   overflow: none;
   position: absolute;
-  margin-top: -50px;
+  margin-top: -35px;
   width: 75px;
   height: 30px;
   padding-top: 5px;
