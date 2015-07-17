@@ -269,7 +269,7 @@ angular.module('starter.controllers', [])
       $scope.photos = d;
       photo = $scope.photos[d.length-1]
       photo.newId = "winning-icon"
-      photo.newSrc = "img/wreath3.png"
+      photo.newSrc = "img/winner-ribbon7.png"
     });
   }
   $scope.load()

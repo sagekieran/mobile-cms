@@ -2732,7 +2732,7 @@ ion-infinite-scroll {
   top: 137px; }
 
 .has-footer {
-  bottom: 30px; }
+  bottom: 38px; }
 
 .has-subfooter {
   bottom: 88px; }
@@ -3457,7 +3457,7 @@ a.subdued {
   border-bottom-width: 0;
   background-position: top;
   text-align: center;
-  height: 30px; }
+  height: 38px; }
   .bar-footer.item-input-inset {
     position: absolute;
     text-align: center; }
