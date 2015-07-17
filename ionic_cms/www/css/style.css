@@ -3,6 +3,7 @@
 body {                                            /*Body*/
   font-family: "Raleway";
   background: #f9f9f9;
+  overflow: hidden;
 }
 a {
   text-decoration: none;
@@ -63,17 +64,20 @@ input[type = "email"]{                              /*Text input*/
   vertical-align: center;
   float: center;
 }
-
-.votePhoto {
+.vote, .gallery{
+  overflow: hidden;
+  position: relative;
+}
+.galleryPhoto, .votePhoto {
   width: 100%;
+  height: 100%;
+  overflow: none;
 }
-
-.galContainer {
-}
-
 .galleryPhoto {
-  padding: none;
-  width: 100%;
+  display: block;
+}
+.votePhoto {
+  display: inline-block;
 }
  #arrow {
    padding: 20px;
@@ -104,6 +108,9 @@ input[type = "email"]{                              /*Text input*/
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
+}
+#grid-head {
+  margin: 20px;
 }
 .about-par{
   text-align: left;
@@ -196,21 +203,33 @@ input[type = "email"]{                              /*Text input*/
   margin: 0 auto;
   text-align: center;
   float: center;
-  font-size: 9px;
+  font-size:9px;
 }
 #campaign {                                    /*Vote Section Campaign Information*/
   background-color: white;
   width: 100%;
-  height: 40px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top:15px;
+}
+#campaign-slogan, #campaign-intro {
+  width: 100%;
+  font-size: 11px;
+  font-family:'Raleway';
+  letter-spacing: 2px;
+  font-weight: 800;
+  display: inline-block;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 #campaign-slogan {
-  padding: 15px;
-  font-size: 12px;
-  font-family:'Raleway';
-  text-align: center;
-  letter-spacing: 3px;
-  width: 100%;
+  color: #00ABD5;
+  display: inline-block;
+}
+#campaign-intro {
   color: #333333;
+  text-transform: uppercase;
 }
 .menu-img {
     margin-left: 10px;
@@ -225,7 +244,6 @@ input[type = "email"]{                              /*Text input*/
   position: absolute;
 }
 .vote-space {
-  cursor: pointer;
   font-size: 0;
   overflow: none;
   position: absolute;
@@ -244,18 +262,18 @@ input[type = "email"]{                              /*Text input*/
   margin-top: -1px;
 }
 
-/*#winning-icon {
+#winning-icon {
   position: absolute;
-  height: 18%;
-  width: 15%;
+  min-height: 55px;
+  min-width: 77px;
+  max-height: 77px;
   max-width: 100px;
-  max-height: 100px;
   top: 0px;
   padding-top: 0px;
   right: 0;
   padding-right: 0px;
   cursor: default;
-}*/
+}
 
 
 #hide {
