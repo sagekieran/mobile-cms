@@ -199,7 +199,7 @@ input[type = "email"]{                              /*Text input*/
   margin: 0 auto;
   text-align: center;
   float: center;
-  font-size:9.5px;
+  font-size:9px;
 }
 #campaign {                                    /*Vote Section Campaign Information*/
   background-color: white;
